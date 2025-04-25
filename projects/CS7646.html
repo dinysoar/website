@@ -47,11 +47,12 @@
     }
 
     .nav {
-      margin-bottom: 30px;
       display: flex;
-      gap: 24px;
+      flex-wrap: wrap;
       justify-content: center;
+      gap: 24px;
       font-size: 0.92rem;
+      margin-bottom: 30px;
     }
 
     .nav a {
@@ -76,7 +77,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-
 
     .intro {
       font-style: italic;
@@ -124,14 +124,17 @@
       h1 {
         font-size: 2rem;
       }
+
       .nav {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
       }
+
       .section-wrapper {
         padding: 20px;
       }
+
       .course-grid {
         justify-content: center;
       }
@@ -181,6 +184,5 @@
       });
     });
   </script>
-  
 </body>
 </html>

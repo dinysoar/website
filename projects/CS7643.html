@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: 'Proxima Nova', sans-serif;
       background: radial-gradient(circle at top left, #121212, #0c0d0f);
@@ -16,6 +17,7 @@
       max-width: 900px;
       margin: auto;
     }
+
     h1 {
       font-size: 2.6rem;
       font-weight: 600;
@@ -24,6 +26,7 @@
       letter-spacing: 0.5px;
       text-align: center;
     }
+
     h2 {
       font-size: 1.6rem;
       margin-top: 40px;
@@ -32,28 +35,34 @@
       border-left: 4px solid #ffffff22;
       padding-left: 12px;
     }
+
     p {
       margin-bottom: 24px;
       font-size: 1.02rem;
       color: #cccccc;
     }
+
     .nav {
       margin-bottom: 30px;
       display: flex;
       gap: 24px;
       justify-content: center;
       font-size: 0.92rem;
+      flex-wrap: wrap;
     }
+
     .nav a {
       color: #bbbbbb;
       text-decoration: none;
       border-bottom: 1px solid transparent;
       transition: color 0.3s ease, border-bottom 0.3s ease;
     }
+
     .nav a:hover {
       color: #ffffff;
       border-bottom: 1px solid #ffffff;
     }
+
     .section-wrapper {
       opacity: 0;
       transform: translateY(-30px);
@@ -72,6 +81,7 @@
       margin-bottom: 40px;
       text-align: center;
     }
+
     .course-nav-header {
       font-size: 1.2rem;
       font-weight: 500;
@@ -79,6 +89,7 @@
       margin-bottom: 16px;
       color: #aaa;
     }
+
     .course-grid {
       display: flex;
       justify-content: center;
@@ -87,6 +98,7 @@
       padding: 20px 0 0;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
+
     .course-grid a {
       padding: 10px 18px;
       background: #232427;
@@ -96,11 +108,32 @@
       font-weight: 500;
       transition: all 0.3s ease;
     }
+
     .course-grid a:hover {
       background: #303136;
       color: white;
       transform: translateY(-2px);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .section-wrapper {
+        padding: 20px;
+      }
+
+      .course-grid {
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -142,6 +175,7 @@
     <a href="cs7641.html">CS7641</a>
     <a href="cs6515.html">CS6515</a>
   </div>
+
   <script>
     window.addEventListener("DOMContentLoaded", () => {
       const section = document.querySelector('.section-wrapper');
@@ -150,6 +184,5 @@
       });
     });
   </script>
-  
 </body>
 </html>
