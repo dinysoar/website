@@ -69,6 +69,17 @@
     }
 
     @media (max-width: 600px) {
+      body {
+        min-height: 100vh;
+        width: 100vw;
+        max-width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
       h1 {
         font-size: 2rem;
       }
@@ -77,6 +88,11 @@
         flex-wrap: wrap;
         gap: 16px;
         justify-content: center;
+      }
+
+      .entry {
+        width: 100%;
+        box-sizing: border-box;
       }
     }
   </style>
