@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – Colton Combs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Proxima Nova', sans-serif;
+      background: radial-gradient(circle at top left, #121212, #0c0d0f);
+      color: #f0f0f0;
+      line-height: 1.7;
+      padding: 60px 24px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #999;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      font-size: 0.92rem;
+      margin-bottom: 50px;
+    }
+
+    .nav a {
+      color: #bbbbbb;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: #ffffff;
+      border-bottom: 1px solid #ffffff;
+    }
+
+    .section-wrapper {
+      background: #1b1c1f;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    label {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #cccccc;
+      margin-bottom: 4px;
+      text-align: left;
+    }
+
+    input, textarea {
+      padding: 12px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background: #2a2a2e;
+      color: #fff;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      height: 150px;
+    }
+
+    button {
+      padding: 12px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #0c0d0f;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #dddddd;
+    }
+
+    .contact-info {
+      margin-top: 40px;
+      color: #aaa;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      .nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .section-wrapper {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="resume.html">Resume</a>
+  </div>
+
+  <div class="section-wrapper">
+    <h1>Contact</h1>
+    <div class="subtitle">Let's get in touch</div>
+
+    <form>
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <p>Email: ccombs35@gatech.edu</p>
+      <p>Phone: (909) 838-9789</p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/colton-combs-7507ab261/" target="_blank" style="color: #cccccc; text-decoration: underline;">linkedin.com/in/colton-combs</a></p>
+    </div>
+  </div>
+</body>
+</html>

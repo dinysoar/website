@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS7638 – AI for Robotics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Proxima Nova', sans-serif;
+      background: radial-gradient(circle at top left, #121212, #0c0d0f);
+      color: #f0f0f0;
+      line-height: 1.7;
+      padding: 60px 24px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      color: #e6e6e6;
+      border-left: 4px solid #ffffff22;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 24px;
+      font-size: 1.02rem;
+      color: #cccccc;
+    }
+    .nav {
+      margin-bottom: 30px;
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      font-size: 0.92rem;
+    }
+    .nav a {
+      color: #bbbbbb;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+    .nav a:hover {
+      color: #ffffff;
+      border-bottom: 1px solid #ffffff;
+    }
+    .section-wrapper {
+      opacity: 0;
+      transform: translateY(-30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .section-wrapper.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .intro {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #999;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .gif-preview {
+      margin: 20px auto;
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+    }
+    .course-nav-header {
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 16px;
+      color: #aaa;
+    }
+    .course-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding: 20px 0 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .course-grid a {
+      padding: 10px 18px;
+      background: #232427;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #ddd;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .course-grid a:hover {
+      background: #303136;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="../index.html">Home</a>
+    <a href="../projects.html">Projects</a>
+    <a href="../about.html">About</a>
+    <a href="../resume.html">Resume</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+
+  <div class="section-wrapper">
+    <h1>CS7638 – AI for Robotics</h1>
+    <p class="intro">Hands-on robotics projects that explored localization, control, mapping, and decision-making strategies to simulate intelligent drone navigation and planning.</p>
+
+    <h2>Localization System for Autonomous Drone</h2>
+    <p>This project was centered on designing a complete localization system for an autonomous drone, simulating the critical task of enabling a robot to understand where it is in the world using noisy sensor inputs. I integrated sensor fusion techniques, including Kalman and Particle Filters, to estimate position and orientation over time. Through careful tuning and validation, I saw first-hand how filtering helped smooth out noise and recover accurate paths from uncertain data.</p>
+    <img class="gif-preview" src="KalmanFilter.gif" alt="Localization GIF">
+    <img class="gif-preview" src="ParticleFilter.gif" alt="Localization GIF">
+
+    <h2>PID Controller for Stable Flight</h2>
+    <p>To ensure precise movement and responsiveness in flight, I implemented a Proportional-Integral-Derivative (PID) controller from scratch. Tuning the gains required iteration and intuition—balancing between overshoot and sluggish response. In the end, the drone followed waypoints with tight error margins and stable motion, which felt like a small but proud engineering win.</p>
+    <img class="gif-preview" src="DronePID.gif" alt="PID Controller GIF">
+
+    <h2>Graph SLAM for Mapping and Localization</h2>
+    <p>I implemented Graph SLAM (Simultaneous Localization and Mapping), where the drone built a map of its environment while also figuring out its own location. This involved modeling constraints between poses and landmarks and optimizing the resulting graph. Seeing a map emerge from sparse sensor readings felt like unlocking a core skill in robotic intelligence—and highlighted how optimization and perception are deeply connected.</p>
+    <img class="gif-preview" src="GraphSlam.gif" alt="Graph SLAM GIF">
+
+    <h2>A* Pathfinding and Policy Mapping</h2>
+    <p>Path planning came next. I applied the A* algorithm to compute efficient paths between waypoints, integrating cost maps and heuristics for real-time decision-making. I also implemented value iteration and policy iteration to compute global policy maps—reinforcing how value-based reasoning can complement graph-based planning. It felt rewarding to see the drone plan not just a path, but a policy.</p>
+    <img class="gif-preview" src="WarehouseSearch.gif" alt="A* Pathfinding GIF">
+
+    <h2>System Integration and Final Delivery</h2>
+    <p>The final system combined all modules—localization, control, SLAM, and planning—into a cohesive navigation stack. It was satisfying to see all the parts come together. Though each piece required different tools and math, building something that simulated intelligent behavior made the project deeply fulfilling. This course helped me appreciate the balance between theory and implementation in robotics—and the importance of iteration when things (inevitably) didn’t work the first time.</p>
+  </div>
+
+  <div class="course-nav-header">Jump to another course</div>
+  <div class="course-grid">
+    <a href="cs7646.html">CS7646</a>
+    <a href="cs7643.html">CS7643</a>
+    <a href="cs7638.html">CS7638</a>
+    <a href="cs6457.html">CS6457</a>
+    <a href="cs7641.html">CS7641</a>
+    <a href="cs6515.html">CS6515</a>
+  </div>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const section = document.querySelector('.section-wrapper');
+      requestAnimationFrame(() => {
+        section.classList.add('reveal');
+      });
+    });
+  </script>
+  
+</body>
+</html>

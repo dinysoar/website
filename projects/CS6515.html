@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS6515 – Intro to Graduate Algorithms</title>
+  <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Proxima Nova', sans-serif;
+      background: radial-gradient(circle at top left, #121212, #0c0d0f);
+      color: #f0f0f0;
+      line-height: 1.7;
+      padding: 60px 24px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      color: #e6e6e6;
+      border-left: 4px solid #ffffff22;
+      padding-left: 12px;
+    }
+    h3 {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+    p {
+      margin-bottom: 20px;
+      font-size: 1.02rem;
+      color: #cccccc;
+    }
+    ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .nav {
+      margin-bottom: 30px;
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      font-size: 0.92rem;
+    }
+    .nav a {
+      color: #bbbbbb;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+    .nav a:hover {
+      color: #ffffff;
+      border-bottom: 1px solid #ffffff;
+    }
+    .section-wrapper {
+      opacity: 0;
+      transform: translateY(-30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .section-wrapper.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .intro {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #999;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .course-nav-header {
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 16px;
+      color: #aaa;
+    }
+    .course-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding: 20px 0 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .course-grid a {
+      padding: 10px 18px;
+      background: #232427;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #ddd;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .course-grid a:hover {
+      background: #303136;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="../index.html">Home</a>
+    <a href="../projects.html">Projects</a>
+    <a href="../about.html">About</a>
+    <a href="../resume.html">Resume</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+
+  <div class="section-wrapper">
+    <h1>CS6515 – Intro to Graduate Algorithms</h1>
+    <p class="intro">A deep, methodical journey through the principles of algorithm design and analysis, with a focus on clarity, correctness, and efficiency.</p>
+
+    <h2>Divide and Conquer</h2>
+    <p>We began with problems that could be split into smaller, independent subproblems. I studied:</p>
+    <ul>
+      <li><strong>Merge Sort</strong>: A foundational recursive algorithm that uses divide and merge steps.</li>
+      <li><strong>Fast Multiplication</strong> (Karatsuba): Used to multiply large integers faster than the traditional O(n²) method.</li>
+      <li><strong>Closest Pair of Points</strong>: An elegant example of how geometric problems benefit from divide and conquer.</li>
+    </ul>
+    <p>What stood out most to me here was how recursion and clever partitioning let you solve complex problems with elegant simplicity. It made me realize the power of structure over brute force.</p>
+
+    <h2>Dynamic Programming</h2>
+    <p>Dynamic programming took recursion and added memory. We explored:</p>
+    <ul>
+      <li><strong>Knapsack</strong> (0/1 and unbounded)</li>
+      <li><strong>Longest Common Subsequence</strong> and <strong>Longest Increasing Subsequence</strong></li>
+      <li><strong>Edit Distance</strong>: A practical application in spell checkers and DNA alignment.</li>
+      <li><strong>Matrix Chain Multiplication</strong>: Helped understand the idea of decision points in DP.</li>
+      <li><strong>Bellman-Ford</strong> (as a DP on graphs)</li>
+    </ul>
+    <p>I learned how important it is to define subproblems properly and identify base cases. Writing clear recurrence relations was one of the most satisfying parts of the course.</p>
+
+    <h2>Greedy Algorithms</h2>
+    <p>This section helped me learn when local decisions can lead to global optima. Topics included:</p>
+    <ul>
+      <li><strong>Interval Scheduling</strong></li>
+      <li><strong>Huffman Coding</strong></li>
+      <li><strong>Minimum Spanning Trees</strong>: Prim’s and Kruskal’s</li>
+      <li><strong>Activity Selection and Job Scheduling</strong></li>
+    </ul>
+    <p>Greedy algorithms taught me a lot about the trade-offs between simplicity and correctness—and how to use formal proofs to justify when greedy strategies are valid.</p>
+
+    <h2>Graph Algorithms</h2>
+    <p>This was the most diverse section, covering both search and optimization on graphs:</p>
+    <ul>
+      <li><strong>Breadth-First Search (BFS)</strong> and <strong>Depth-First Search (DFS)</strong></li>
+      <li><strong>Topological Sort</strong>: Critical in dependency resolution.</li>
+      <li><strong>Dijkstra’s Algorithm</strong> and <strong>Bellman-Ford</strong>: Single-source shortest paths.</li>
+      <li><strong>Floyd-Warshall</strong>: All-pairs shortest path.</li>
+      <li><strong>Strongly Connected Components (Kosaraju’s Algorithm)</strong></li>
+    </ul>
+    <p>What stuck with me most was how small changes in graph structure (like negative weights) could drastically alter which algorithm was appropriate. It taught me to always analyze before applying a solution.</p>
+
+    <h2>NP-Completeness and Reductions</h2>
+    <p>We explored the P vs. NP question, learned how to define the class NP, and practiced reductions. Problems included:</p>
+    <ul>
+      <li><strong>3SAT</strong>, <strong>Subset Sum</strong>, <strong>Vertex Cover</strong>, <strong>Independent Set</strong>, <strong>Hamiltonian Path</strong></li>
+      <li>Reductions using if-and-only-if logic and polynomial-time transformations.</li>
+    </ul>
+    <p>This was probably the most mentally taxing section, but it changed how I think about algorithmic problem solving. I realized sometimes it’s okay to say “this is hard” and focus on what can be proven about it instead.</p>
+
+    <h2>Network Flow and Linear Programming</h2>
+    <p>We ended the course with flow networks and LP:</p>
+    <ul>
+      <li><strong>Ford-Fulkerson Algorithm</strong> and <strong>Edmonds-Karp</strong> for max flow</li>
+      <li><strong>Applications of Flow</strong>: Matching, scheduling, bipartite graphs</li>
+      <li><strong>Linear Programming (LP)</strong>: Formulation, feasibility, and geometric intuition</li>
+      <li><strong>Duality</strong>: Understanding primal and dual relationships in LP</li>
+    </ul>
+    <p>Flow networks helped reinforce algorithm design as a tool for solving real-world optimization problems. And learning LP gave me a foundation for understanding how constraints and objective functions are used in machine learning and operations research.</p>
+  </div>
+
+  <div class="course-nav-header">Jump to another course</div>
+  <div class="course-grid">
+    <a href="cs7646.html">CS7646</a>
+    <a href="cs7643.html">CS7643</a>
+    <a href="cs7638.html">CS7638</a>
+    <a href="cs6457.html">CS6457</a>
+    <a href="cs7641.html">CS7641</a>
+    <a href="cs6515.html">CS6515</a>
+  </div>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const section = document.querySelector('.section-wrapper');
+      requestAnimationFrame(() => {
+        section.classList.add('reveal');
+      });
+    });
+  </script>
+  
+</body>
+</html>

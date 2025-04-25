@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colton Combs – Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Proxima Nova', sans-serif;
+      background: radial-gradient(circle at top left, #121212, #0c0d0f);
+      color: #f0f0f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      margin-top: 10px;
+      margin-bottom: 50px;
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: #bbbbbb;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+      border-bottom: 1px solid #ffffff;
+    }
+
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .btn {
+      background: linear-gradient(145deg, #1e1f22, #141518);
+      border: 1px solid #2c2c2e;
+      border-radius: 16px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: all 0.4s ease;
+      color: #fafafa;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 0 transparent;
+      text-decoration: none;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+      transition: opacity 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .btn:hover::before {
+      opacity: 1;
+    }
+
+    .btn:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-title {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .btn-description {
+      font-size: 0.88rem;
+      color: #cccccc;
+      opacity: 0;
+      max-height: 0;
+      transition: opacity 0.3s ease, max-height 0.3s ease;
+    }
+
+    .btn:hover .btn-description {
+      opacity: 1;
+      max-height: 100px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Class Projects</h1>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="button-container">
+    <a class="btn" href="projects/CS7646.html">
+      <span class="btn-title">CS7646 – ML for Trading</span>
+      <span class="btn-description">Trading bot, Q-learning, and portfolio optimization.</span>
+    </a>
+    <a class="btn" href="projects/CS7643.html">
+      <span class="btn-title">CS7643 – Deep Learning</span>
+      <span class="btn-description">LLM finetuning, CNNs, attention models, and optimization.</span>
+    </a>
+    <a class="btn" href="projects/CS7638.html">
+      <span class="btn-title">CS7638 – AI for Robotics</span>
+      <span class="btn-description">Kalman filters, PID controllers, SLAM, and A* pathfinding.</span>
+    </a>
+    <a class="btn" href="projects/CS6457.html">
+      <span class="btn-title">CS6457 – Video Game Design</span>
+      <span class="btn-description">Designed and developed a 3D RPG using Unity.</span>
+    </a>
+    <a class="btn" href="projects/CS7641.html">
+      <span class="btn-title">CS7641 – Machine Learning</span>
+      <span class="btn-description">SVMs, neural nets, clustering, dimensionality reduction.</span>
+    </a>
+    <a class="btn" href="projects/CS6515.html">
+      <span class="btn-title">CS6515 – Graduate Algorithms</span>
+      <span class="btn-description">NP-completeness, dynamic programming, divide & conquer.</span>
+    </a>
+  </div>
+</body>
+</html>

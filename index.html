@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colton Combs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Proxima Nova', sans-serif;
+      background: radial-gradient(circle at top left, #121212, #0c0d0f);
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+      z-index: 2;
+    }
+    .hero-image {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-height: 100vh;
+      object-fit: cover;
+      opacity: 0.07;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      z-index: 2;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity 1s ease, transform 1s ease;
+      pointer-events: none;
+    }
+    .button-container.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .btn {
+      padding: 20px;
+      font-size: 1.1rem;
+      border: 2px solid white;
+      background-color: transparent;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+    .btn:hover {
+      background-color: white;
+      color: #0d0d0f;
+      transform: translateY(-8px);
+    }
+    .btn-title { font-size: 1.3rem; font-weight: bold; margin-bottom: 5px; }
+    .btn-description {
+      font-size: 0.9rem;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 0.3s ease, max-height 0.3s ease;
+      text-align: center;
+    }
+    .btn:hover .btn-description {
+      opacity: 0.75;
+      max-height: 100px;
+    }
+    .subquote {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: #888;
+      margin-top: 50px;
+      z-index: 2;
+      line-height: 1.6;
+      min-height: 3em;
+    }
+    .password-prompt {
+      z-index: 2;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .password-prompt label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+      color: #ccc;
+    }
+    input[type="password"] {
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background: #1f1f1f;
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+    }
+    input[type="password"]::placeholder {
+      color: #888;
+    }
+  </style>
+  <script>
+    function goToSection(sectionId) {
+      window.location.href = `${sectionId}.html`;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const quote = `There’s no wind in space,\nbut something still presses against me—\na weight made of nothing but time.`;
+      const target = document.querySelector(".subquote");
+      let index = 0;
+      function type() {
+        if (index < quote.length) {
+          const char = quote[index] === "\n" ? "<br>" : quote[index];
+          target.innerHTML += char;
+          index++;
+          setTimeout(type, 80);
+        }
+      }
+      type();
+
+      const input = document.getElementById("accessInput");
+      const prompt = document.querySelector(".password-prompt");
+      const container = document.querySelector(".button-container");
+
+      if (localStorage.getItem("access_granted")) {
+        prompt.style.display = "none";
+        container.classList.add("show");
+      }
+
+      input.addEventListener("input", function () {
+        if (input.value.toLowerCase() === "elephant") {
+          localStorage.setItem("access_granted", "true");
+          prompt.style.display = "none";
+          container.classList.add("show");
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <img class="hero-image" src="spacegif.gif" alt="Background character">
+  <h1>↠ C O M B S, C O L T O N ↞</h1>
+  <div class="password-prompt">
+    <label for="accessInput">type <strong>elephant</strong> to enter</label>
+    <input type="password" id="accessInput" placeholder="...">
+  </div>
+  <div class="button-container">
+    <button class="btn" onclick="goToSection('projects')">
+      <span class="btn-title">Projects</span>
+      <span class="btn-description">Games, filters, algorithms, and more</span>
+    </button>
+    <button class="btn" onclick="goToSection('about')">
+      <span class="btn-title">About Me</span>
+      <span class="btn-description">Who I am and what drives me</span>
+    </button>
+    <button class="btn" onclick="goToSection('resume')">
+      <span class="btn-title">Resume</span>
+      <span class="btn-description">View or download my resume</span>
+    </button>
+    <button class="btn" onclick="goToSection('contact')">
+      <span class="btn-title">Contact</span>
+      <span class="btn-description">Let’s get in touch</span>
+    </button>
+  </div>
+  <div class="subquote"></div>
+</body>
+</html>

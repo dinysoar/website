@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS7641 – Machine Learning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Proxima Nova', sans-serif;
+      background: radial-gradient(circle at top left, #121212, #0c0d0f);
+      color: #f0f0f0;
+      line-height: 1.7;
+      padding: 60px 24px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      color: #e6e6e6;
+      border-left: 4px solid #ffffff22;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 24px;
+      font-size: 1.02rem;
+      color: #cccccc;
+    }
+    .nav {
+      margin-bottom: 30px;
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      font-size: 0.92rem;
+    }
+    .nav a {
+      color: #bbbbbb;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+    .nav a:hover {
+      color: #ffffff;
+      border-bottom: 1px solid #ffffff;
+    }
+    .section-wrapper {
+      opacity: 0;
+      transform: translateY(-30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .section-wrapper.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .intro {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #999;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .course-nav-header {
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 16px;
+      color: #aaa;
+    }
+    .course-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding: 20px 0 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .course-grid a {
+      padding: 10px 18px;
+      background: #232427;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #ddd;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .course-grid a:hover {
+      background: #303136;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="../index.html">Home</a>
+    <a href="../projects.html">Projects</a>
+    <a href="../about.html">About</a>
+    <a href="../resume.html">Resume</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+
+  <div class="section-wrapper">
+    <h1>CS7641 – Machine Learning</h1>
+    <p class="intro">A series of analytical and implementation-driven projects exploring supervised learning, randomized optimization, unsupervised learning, and reinforcement learning.</p>
+
+    <h2>Supervised Learning & Model Comparison</h2>
+    <p>In this project, I compared multiple classification algorithms across two challenging real-world datasets. I created hypotheses for each dataset to predict how features might influence model performance, and explored how data quality and structure affect learning.</p>
+    <p>I trained and tuned Neural Networks, Support Vector Machines (with linear and RBF kernels), and k-Nearest Neighbors (varying <em>k</em>)—analyzing accuracy, generalization, and training time. I also generated learning and validation curves to visualize model behavior across training sizes and hyperparameter values. All results were presented in an 8-page IEEE-formatted report written in LaTeX.</p>
+    <p>This taught me how different algorithms respond to hyperparameters, overfitting, and class imbalance. It also reminded me that the best-performing model isn’t always the fastest or the simplest—it’s the one best matched to the problem and data.</p>
+
+    <h2>Randomized Optimization</h2>
+    <p>I implemented and analyzed Randomized Hill Climbing, Simulated Annealing, Genetic Algorithm, and MIMIC (extra credit) for solving two custom-designed optimization problems. Each fitness function was tailored to highlight a specific strength of an algorithm: escaping local optima or exploring multi-modal spaces.</p>
+    <p>I later applied these same algorithms to optimize neural network weights on a classification task, tuning loss functions, activation types, and algorithm parameters. Through extensive experimentation, I benchmarked performance in terms of accuracy, convergence speed, and computational cost, comparing trade-offs across methods.</p>
+    <p>This project gave me an appreciation for the flexibility of metaheuristics in both discrete and continuous domains and helped me understand when to trade exploration for exploitation—or vice versa.</p>
+
+    <h2>Unsupervised Learning: Clustering & Dimensionality Reduction</h2>
+    <p>I explored Expectation Maximization and K-Means for clustering, and PCA, ICA, and Random Projection for dimensionality reduction. I evaluated each across multiple datasets, including ones from earlier projects, to keep comparisons consistent.</p>
+    <p>To measure impact, I combined dimensionality reduction with clustering, creating twelve unique combinations. I analyzed outcomes using internal validation metrics and compared results to known labels. I also retrained neural networks on reduced datasets and found that PCA and RP often improved training time with minimal accuracy loss.</p>
+    <p>Through this, I learned how combining unsupervised techniques with supervised models can boost performance while simplifying input data—a helpful insight when dealing with high-dimensional problems.</p>
+
+    <h2>Markov Decision Processes & Reinforcement Learning</h2>
+    <p>For this final project, I created two custom MDPs: one simple, one large and sparse. I solved each using both Value and Policy Iteration, analyzing convergence time and policy stability. I then used a model-free reinforcement learning approach to solve the same MDPs and compared results across all methods.</p>
+    <p>Key metrics included convergence rate, optimal policy quality, and computational complexity. I also generated graphs to show iteration trends and how state-space size impacts algorithm selection.</p>
+    <p>What I took away most was how exploration strategies affect long-term reward in unknown environments—and how sometimes, simplicity (like Value Iteration) still wins when resources are limited.</p>
+  </div>
+
+  <div class="course-nav-header">Jump to another course</div>
+  <div class="course-grid">
+    <a href="cs7646.html">CS7646</a>
+    <a href="cs7643.html">CS7643</a>
+    <a href="cs7638.html">CS7638</a>
+    <a href="cs6457.html">CS6457</a>
+    <a href="cs7641.html">CS7641</a>
+    <a href="cs6515.html">CS6515</a>
+  </div>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const section = document.querySelector('.section-wrapper');
+      requestAnimationFrame(() => {
+        section.classList.add('reveal');
+      });
+    });
+  </script>
+  
+</body>
+</html>

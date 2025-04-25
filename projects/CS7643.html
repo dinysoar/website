@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS7643 – Deep Learning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Proxima Nova', sans-serif;
+      background: radial-gradient(circle at top left, #121212, #0c0d0f);
+      color: #f0f0f0;
+      line-height: 1.7;
+      padding: 60px 24px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      color: #e6e6e6;
+      border-left: 4px solid #ffffff22;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 24px;
+      font-size: 1.02rem;
+      color: #cccccc;
+    }
+    .nav {
+      margin-bottom: 30px;
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      font-size: 0.92rem;
+    }
+    .nav a {
+      color: #bbbbbb;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+    .nav a:hover {
+      color: #ffffff;
+      border-bottom: 1px solid #ffffff;
+    }
+    .section-wrapper {
+      opacity: 0;
+      transform: translateY(-30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .section-wrapper.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .intro {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #999;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .course-nav-header {
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 16px;
+      color: #aaa;
+    }
+    .course-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding: 20px 0 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .course-grid a {
+      padding: 10px 18px;
+      background: #232427;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #ddd;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .course-grid a:hover {
+      background: #303136;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="../index.html">Home</a>
+    <a href="../projects.html">Projects</a>
+    <a href="../about.html">About</a>
+    <a href="../resume.html">Resume</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+
+  <div class="section-wrapper">
+    <h1>CS7643 – Deep Learning</h1>
+    <p class="intro">A collection of projects exploring foundational and advanced deep learning techniques through practical, research-inspired work.</p>
+
+    <h2>CNN for CIFAR-10 Image Classification</h2>
+    <p>Using PyTorch, I built a convolutional neural network from the ground up to classify images from the CIFAR-10 dataset. I experimented with class imbalance by modifying the dataset distribution and applied a range of strategies—data augmentation, re-weighting, and sampling—to improve model robustness.</p>
+    <p>Through careful tuning and experimentation, I observed how different techniques impacted precision and recall on underrepresented classes. This project not only sharpened my PyTorch fluency but also gave me practical insight into the importance of fairness and balance in model performance.</p>
+
+    <h2>Machine Translation with RNN, LSTM, Seq2Seq, and Transformer Models</h2>
+    <p>This multi-phase project focused on building and comparing several deep learning architectures for language translation. I began by implementing RNN and LSTM cells from scratch, including parameter initialization and forward logic—gaining firsthand appreciation for how sequential data flows through a network.</p>
+    <p>Next, I developed a Seq2Seq model with cosine similarity-based attention, followed by a Transformer encoder with multi-head self-attention, residual connections, and layer normalization. I trained all models and compared perplexity and output quality, analyzing how each architecture handled long-term dependencies and context representation.</p>
+    <p>This project pushed me to think deeply about architecture design choices, and how small differences (like attention vs. recurrence) can yield very different learning behaviors.</p>
+
+    <h2>Efficient LLM Fine-Tuning via Knowledge Distillation</h2>
+    <p>In our final project, my team and I tackled large language model fine-tuning using knowledge distillation. We used a teacher-student framework with temperature scaling, soft-label distillation, and KL-divergence loss blending to fine-tune smaller student models efficiently.</p>
+    <p>We trained models on MNLI and CoLA (with validation via HANS and CoLA-OOD), comparing performance across Vanilla Fine-Tuning, PBFT, and In-Context Learning. Our experiments used models ranging from 125M to 6.7B parameters, and we evaluated both accuracy and memory use.</p>
+    <p>After early limitations on Google Cloud and Colab, we transitioned to PACE with 2x H100 GPUs, using Docker to ensure reproducibility. The larger models outperformed in-context methods, but training stability and parallelization remained tricky, particularly with DeepSpeed.</p>
+    <p>What stood out most was the value of systematic experimentation—understanding when a smaller model, well-tuned, can match or exceed the performance of a much larger one.</p>
+  </div>
+
+  <div class="course-nav-header">Jump to another course</div>
+  <div class="course-grid">
+    <a href="cs7646.html">CS7646</a>
+    <a href="cs7643.html">CS7643</a>
+    <a href="cs7638.html">CS7638</a>
+    <a href="cs6457.html">CS6457</a>
+    <a href="cs7641.html">CS7641</a>
+    <a href="cs6515.html">CS6515</a>
+  </div>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const section = document.querySelector('.section-wrapper');
+      requestAnimationFrame(() => {
+        section.classList.add('reveal');
+      });
+    });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS7646 – Machine Learning for Trading</title>
+  <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Proxima Nova', sans-serif;
+      background: radial-gradient(circle at top left, #121212, #0c0d0f);
+      color: #f0f0f0;
+      line-height: 1.7;
+      padding: 60px 24px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      color: #e6e6e6;
+      border-left: 4px solid #ffffff22;
+      padding-left: 12px;
+    }
+
+    p {
+      margin-bottom: 24px;
+      font-size: 1.02rem;
+      color: #cccccc;
+    }
+
+    .nav {
+      margin-bottom: 30px;
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      font-size: 0.92rem;
+    }
+
+    .nav a {
+      color: #bbbbbb;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: #ffffff;
+      border-bottom: 1px solid #ffffff;
+    }
+
+    .section-wrapper {
+      opacity: 0;
+      transform: translateY(-30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .section-wrapper.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    .intro {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #999;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .course-nav-header {
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 16px;
+      color: #aaa;
+    }
+
+    .course-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding: 20px 0 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .course-grid a {
+      padding: 10px 18px;
+      background: #232427;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #ddd;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .course-grid a:hover {
+      background: #303136;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .nav {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+      .section-wrapper {
+        padding: 20px;
+      }
+      .course-grid {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="../index.html">Home</a>
+    <a href="../projects.html">Projects</a>
+    <a href="../about.html">About</a>
+    <a href="../resume.html">Resume</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+
+  <div class="section-wrapper">
+    <h1>Machine Learning for Trading</h1>
+    <p class="intro">Course: CS7646 – Fall 2023 | Georgia Institute of Technology</p>
+
+    <h2>Overview</h2>
+    <p>This project was a deep dive into designing an algorithmic trading system that leverages machine learning to make informed decisions. The primary goal was to build a fully automated pipeline capable of identifying trade opportunities using both technical indicators and ensemble-based learning models. The project was conducted as part of the Machine Learning for Trading course and focused heavily on reproducibility, performance analysis, and robustness to real-world trading constraints.</p>
+
+    <h2>What I Built</h2>
+    <p>I developed a Python-based automated trading strategy that combines traditional technical analysis with modern machine learning techniques. Indicators such as EMA, SMA, Bollinger Bands, and CCI were used to generate meaningful features for a bag learner composed of random tree learners. I also implemented a full market simulator that accounted for key market dynamics—transaction costs, commission fees, and market impact. The strategy was optimized and tuned extensively to improve predictive performance and generalizability.</p>
+
+    <h2>What I Learned</h2>
+    <p>This project helped me understand the nuances of financial time series data and how difficult it can be to make predictions in a noisy market. I learned the importance of balancing model complexity with generalizability and how critical it is to validate results across different market conditions. Most importantly, I gained hands-on experience with backtesting, feature engineering, and measuring trading performance using cumulative returns and Sharpe ratios.</p>
+
+    <h2>Challenges</h2>
+    <p>One of the biggest challenges was ensuring the strategy performed well not just in-sample, but also out-of-sample. While the model achieved an impressive <strong>102% cumulative return in-sample</strong>, it delivered a more modest but realistic <strong>10% cumulative return out-of-sample</strong>. Tuning the learner to handle transaction costs and avoiding overfitting were key technical hurdles. Building a market simulator that realistically modeled execution costs also required careful design.</p>
+  </div>
+
+  <div class="course-nav-header">Jump to another course</div>
+  <div class="course-grid">
+    <a href="cs7646.html">CS7646</a>
+    <a href="cs7643.html">CS7643</a>
+    <a href="cs7638.html">CS7638</a>
+    <a href="cs6457.html">CS6457</a>
+    <a href="cs7641.html">CS7641</a>
+    <a href="cs6515.html">CS6515</a>
+  </div>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const section = document.querySelector('.section-wrapper');
+      requestAnimationFrame(() => {
+        section.classList.add('reveal');
+      });
+    });
+  </script>
+  
+</body>
+</html>
