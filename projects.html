@@ -122,21 +122,66 @@
       max-height: 100px;
     }
 
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 2rem;
       }
 
       .nav-links {
-        flex-direction: column;
-        gap: 12px;
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav.show {
+        display: flex;
       }
     }
   </style>
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileNav').classList.toggle('show');
+    }
+  </script>
 </head>
 <body>
   <h1>Class Projects</h1>
+  <div class="hamburger" onclick="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
   <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div id="mobileNav" class="mobile-nav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="blog.html">Blog</a>
