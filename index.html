@@ -25,6 +25,7 @@
       margin-bottom: 30px;
       letter-spacing: 2px;
       z-index: 2;
+      white-space: nowrap;
     }
     .hero-image {
       position: absolute;
@@ -47,6 +48,7 @@
       transform: translateY(-20px);
       transition: opacity 1s ease, transform 1s ease;
       pointer-events: none;
+      align-items: center;
     }
     .button-container.show {
       opacity: 1;
@@ -107,6 +109,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      width: 400px;
+      max-width: 90%;
     }
     .password-prompt label {
       display: block;
@@ -122,34 +126,36 @@
       color: #fff;
       font-size: 1rem;
       outline: none;
+      width: 100%;
     }
     input[type="password"]::placeholder {
       color: #888;
     }
+
     @media (max-width: 600px) {
-    h1 {
-      font-size: 1.5rem;
-      letter-spacing: 1.2px;
-      white-space: nowrap;
-    }
+      h1 {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+      }
 
-    .btn {
-      width: 90%;
-      font-size: 1rem;
-    }
+      .btn {
+        width: 90%;
+        font-size: 1rem;
+      }
 
-    .btn-title {
-      font-size: 1.1rem;
-    }
+      .btn-title {
+        font-size: 1.1rem;
+      }
 
-    .btn-description {
-      font-size: 0.85rem;
-    }
+      .btn-description {
+        font-size: 0.85rem;
+      }
 
-    .password-prompt {
-      width: 90%;
+      .subquote {
+        padding: 0 10px;
+        font-size: 0.85rem;
+      }
     }
-  }
   </style>
   <script>
     function goToSection(sectionId) {
