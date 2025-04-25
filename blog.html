@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Now – What I'm Working On</title>
+  <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Proxima Nova', sans-serif;
+      background: radial-gradient(circle at top left, #121212, #0c0d0f);
+      color: #f0f0f0;
+      padding: 60px 24px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .nav a {
+      color: #bbbbbb;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.3s, border-bottom 0.3s;
+    }
+
+    .nav a:hover {
+      color: #ffffff;
+      border-bottom: 1px solid #ffffff;
+    }
+
+    .entry {
+      background: #1b1c1f;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .entry h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #e6e6e6;
+    }
+
+    .entry .timestamp {
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 12px;
+    }
+
+    .entry p {
+      font-size: 1.02rem;
+      color: #cccccc;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <h1>Now – What I'm Working On</h1>
+
+  <div class="entry">
+    <h2>Revamping My Portfolio Design</h2>
+    <div class="timestamp">Posted on April 23, 2025 at 10:42 PM</div>
+    <p>
+      Right now, I'm focusing on making my website feel more interactive and visually smooth. Just added a typing animation and gated the homepage behind a password, which gives it this cinematic vibe. Thinking about working next on a smooth blog system so I can drop thoughts like this one whenever inspiration hits.
+    </p>
+  </div>
+
+  <div class="entry">
+    <h2>Planning Deep Dive into Transformers</h2>
+    <div class="timestamp">Posted on June 21, 2023 at 7:15 PM</div>
+    <p>
+      After wrapping up CS7643, I'm going back through my LSTM and Seq2Seq implementations to better understand how attention improves translation quality. I'm also considering applying what I learned to a personal chatbot side project that might even tie into some game development stuff.
+    </p>
+  </div>
+</body>
+</html>
